@@ -1,7 +1,7 @@
 '''
 Input :
-5 4
-1 2 3 4 5
+1st row(size item) - 5 4
+2nd row(arry) - 1 2 3 4 5
 Output :
 5, 1, 2, 3, 4
 '''
