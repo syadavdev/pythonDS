@@ -1,6 +1,6 @@
 #Hacker Rank Dynamic Array Problem
 
-'''
+"""
 Input :
 1st row(numberOfSequence numberOfQuery) - 2 5
 2nd row - 1 0 5
@@ -11,7 +11,9 @@ Input :
 
 Output :
 [7, 3]
-'''
+"""
+
+
 def dynamic_array(n , queries):
     seqList = [[] for i in range(n)]
     lastAns = 0

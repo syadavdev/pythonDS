@@ -1,10 +1,12 @@
-'''
+"""
 Input :
 1st row(size item) - 5 4
 2nd row(arry) - 1 2 3 4 5
 Output :
 5, 1, 2, 3, 4
-'''
+"""
+
+
 def left_rotaion(n, q, arry):
     if n < q:
         q = q % n
