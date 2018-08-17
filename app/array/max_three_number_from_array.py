@@ -4,12 +4,13 @@ input:
 output:
 sorted array : (198, 102, 101)
 """
+import sys
 
 
 def max_elements(arry):
-    first = -10000
-    second = -10000
-    third = -10000
+    first = -sys.maxsize
+    second = -sys.maxsize
+    third = -sys.maxsize
     for i in range(0, len(arry)):
         if arry[i] > first:
             third = second

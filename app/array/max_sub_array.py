@@ -3,10 +3,11 @@ input:
 1st row(array) : -2 -4 3 -1  6 -3 4
 output: 10
 """
+import sys
 
 
 def find_max_subarray_sum(arry, length):
-    max = -1000000
+    max = -sys.maxsize
     sum = 0
     for i in range(0, length):
         sum = sum + arry[i]
