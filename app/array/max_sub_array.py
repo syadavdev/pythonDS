@@ -1,7 +1,7 @@
 """
 input:
 1st row(array) : -2 -4 3 -1  6 -3 4
-output: 10
+output: 9
 """
 import sys
 
