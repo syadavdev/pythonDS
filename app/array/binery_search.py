@@ -15,7 +15,7 @@ def binery_search(arry ,low, high, ele):
 
 class BinarySearchTestCase(unittest.TestCase):
 
-    def test_cross(self):
+    def test_binery_search(self):
         self.assertEqual(binery_search([3 ,4, 5, 6, 7, 8, 9], 0, 6, 4), 2)
 
 
