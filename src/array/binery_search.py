@@ -15,11 +15,15 @@ def binery_search(arry ,low, high, ele):
 
 class BinarySearchTestCase(unittest.TestCase):
 
+    arry = [3, 4, 5, 6, 7, 8, 9]
+    low = 0
+    high = 6
+
     def test_binery_search_one(self):
-        self.assertEqual(binery_search([3 ,4, 5, 6, 7, 8, 9], 0, 6, 4), 2)
+        self.assertEqual(binery_search(self.arry, self.low, self.high, 4), 2)
 
     def test_binery_search_two(self):
-        self.assertEqual(binery_search([3, 4, 5, 6, 7, 8, 9], 0, 6, 1), -1)
+        self.assertEqual(binery_search(self.arry, self.low, self.high, 1), -1)
 
 
 if __name__ == "__main__":

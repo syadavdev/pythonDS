@@ -1,17 +1,19 @@
 """
 Input :
-1st row(size item) - 5 4
-2nd row(arry) - 1 2 3 4 5
+arry - 1 2 3 4 5
+rotation - 4
 Output :
-5, 1, 2, 3, 4
+left rotated array - 5, 1, 2, 3, 4
 """
+import unittest
 
 
-def left_rotaion(n, q, arry):
-    if n < q:
-        q = q % n
+def left_rotaion(arry, rotation):
+    n = len(arry)
+    if n < rotation:
+        rotation = rotation % n
 
-    for i in range(q):
+    for i in range(rotation):
         tmp = arry[0]
         k = 1
         while k < n:
@@ -21,13 +23,14 @@ def left_rotaion(n, q, arry):
     return arry
 
 
-if __name__ == "__main__":
-    n, q = input().split()
-    n = int(n)
-    q = int(q)
-    print("\n")
-    print(n,q)
+class LeftRotaionTest(unittest.TestCase):
 
-    arry = list(map(int,input().split()))
-    arry = left_rotaion(n,q,arry)
-    print(arry)
+    arry = [1, 2, 3, 4, 5]
+    rotation = 4
+
+    def test_left_rotaion(self):
+        self.assertEqual(left_rotaion(self.arry, self.rotation), [5, 1, 2, 3, 4])
+
+
+if __name__ == "__main__":
+    unittest.main()

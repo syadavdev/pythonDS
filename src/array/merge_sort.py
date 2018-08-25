@@ -4,6 +4,7 @@ input:
 output:
 sorted array : [1, 3, 4, 4, 5, 5]
 """
+import unittest
 
 
 def merge(arry, l, m, r):
@@ -47,9 +48,18 @@ def merge_sort(arry, l, r):
         merge_sort(arry, l, mid)
         merge_sort(arry, mid+1, r)
         merge(arry, l, mid, r)
+    return arry
+
+
+class MergeSortTest(unittest.TestCase):
+
+    arry = [5, 4, 1, 3, 4, 5]
+    low = 0
+    high = 6
+
+    def test_merge_sort(self):
+        self.assertEqual(merge_sort(self.arry, self.low, self.high-1), [1, 3, 4, 4, 5, 5])
 
 
 if __name__ == "__main__":
-    arry = list(map(int, input().split()))
-    merge_sort(arry, 0, len(arry)-1)
-    print(arry)
+    unittest.main()

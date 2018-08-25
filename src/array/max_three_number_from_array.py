@@ -1,10 +1,11 @@
 """
 input:
-1st row(array) : 78 45 198 45 47 100 101 102
+array : 78 45 198 45 47 100 101 102
 output:
-sorted array : (198, 102, 101)
+max three elements : (198, 102, 101)
 """
 import sys
+import unittest
 
 
 def max_elements(arry):
@@ -24,6 +25,14 @@ def max_elements(arry):
     return first, second, third
 
 
+class MaxThreeElementsTest(unittest.TestCase):
+
+    arry = [78, 45, 198, 45, 47, 100, 101, 102]
+    result = (198, 102, 101)
+
+    def test_max_elements(self):
+        self.assertEqual(max_elements(self.arry), self.result)
+
+
 if __name__ == "__main__":
-    arry = list(map(int, input().split()))
-    print(max_elements(arry))
+    unittest.main()

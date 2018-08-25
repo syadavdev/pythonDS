@@ -1,9 +1,10 @@
 """
 input:
-1st row(array) : 5 4 1 3 4 9
+5 4 1 3 4 9
 output:
 sorted array : 1 3 4 4 5 9
 """
+import unittest
 
 
 def insertion_sort(arry):
@@ -14,10 +15,16 @@ def insertion_sort(arry):
             arry[j+1] = arry[j]
             j -= 1
         arry[j+1] = key
+    return arry
+
+
+class InsertionSortTest(unittest.TestCase):
+
+    arry = [5, 4, 1, 3, 4, 9]
+
+    def test_insertion_sort(self):
+        self.assertEqual(insertion_sort(self.arry), [1, 3, 4, 4, 5, 9])
 
 
 if __name__ == "__main__":
-    arry = list(map(int, input().split()))
-    print(arry)
-    insertion_sort(arry)
-    print(arry)
+    unittest.main()

@@ -1,9 +1,11 @@
+#Corman problem
 """
 input:
 1st row(array) : -2 -4 3 -1  6 -3 4
 output: 9
 """
 import sys
+import unittest
 
 
 def max_sub_array_sum(arry, low, mid, high):
@@ -41,6 +43,15 @@ def max_sub_array(arry, low, high):
             return cross_sum
 
 
+class FindMaxSubarraySumTest(unittest.TestCase):
+
+    arry = [-2, -4, 3, -1,  6, -3, 4]
+    low = 0
+    high = 7
+
+    def test_max_subarray_sum(self):
+        self.assertEqual(max_sub_array(self.arry, self.low, self.high-1), 9)
+
+
 if __name__ == "__main__":
-    arry = list(map(int, input().split()))
-    print(max_sub_array(arry, 0, len(arry)-1))
+    unittest.main()
