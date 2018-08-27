@@ -12,13 +12,13 @@ def reverse_number(num):
 reverse = 0
 factor = 1
 
-#ToDo
+
 def reverse_number_one(num):
     global reverse
     global factor
     if num > 0:
-        reverse_number(int(num / 10))
-        reverse += (num % 10)*factor
+        reverse = reverse_number_one(int(num/10))
+        reverse += (num%10)*factor
         factor *= 10
     return reverse
 
