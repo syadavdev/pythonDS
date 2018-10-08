@@ -1,4 +1,5 @@
 import unittest
+import random
 
 
 def quick_sort(arry, low, high):
@@ -19,6 +20,24 @@ def partition(arry, low, high):
     return i + 1
 
 
+"""
+Randomize Quick Sort : 
+"""
+
+
+def randomize_quickSort(arry, low, high):
+    if low > high:
+        divider = randmize_partition(arry, low, high)
+        randomize_quickSort(arry, low, divider - 1)
+        randomize_quickSort(arry, divider + 1, high)
+
+
+def randmize_partition(arry, low, high):
+    randomIndex = int(random.randint(low, high))
+    arry[high], arry[randomIndex] = arry[randomIndex], arry[high]
+    return partition(arry, low,  high)
+
+
 class TestQuickSort(unittest.TestCase):
 
     arry = [45, 12, 3, 45, 178, 44, 56, 87, 43, 1]
@@ -26,6 +45,10 @@ class TestQuickSort(unittest.TestCase):
 
     def test_Quick_sort(self):
         quick_sort(self.arry, 0, len(self.arry) - 1)
+        self.assertEqual(self.arry, self.result)
+
+    def test_Randomize_Quick_sort(self):
+        randomize_quickSort(self.arry, 0, len(self.arry) - 1)
         self.assertEqual(self.arry, self.result)
 
 
