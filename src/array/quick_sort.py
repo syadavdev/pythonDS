@@ -26,7 +26,7 @@ Randomize Quick Sort :
 
 
 def randomize_quickSort(arry, low, high):
-    if low > high:
+    if low < high:
         divider = randmize_partition(arry, low, high)
         randomize_quickSort(arry, low, divider - 1)
         randomize_quickSort(arry, divider + 1, high)
